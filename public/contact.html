@@ -30,7 +30,7 @@
       <h1 class="text-4xl font-bold mb-4">Contact</h1>
       <p class="text-slate-600 mb-8">Tell us about your goals. We’ll reply with next steps and a tailored quote.</p>
 
-      <form id="form" class="space-y-4 p-6 rounded-lg border border-slate-200" action="https://formspree.io/f/your_form_id" method="POST">
+      <form id="form" class="space-y-4 p-6 rounded-lg border border-slate-200" action="https://formspree.io/f/%FORMSPREE_ID%" method="POST">
         <div class="grid md:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm font-medium mb-1" for="name">Name</label>
@@ -62,7 +62,7 @@
       </form>
 
       <div class="mt-6 text-sm text-slate-600">
-        Prefer email? Reach us at: <a class="text-brand-700 font-medium" href="mailto:hello@example.com">hello@example.com</a>
+        Prefer email? Reach us at: <a class="text-brand-700 font-medium" href="mailto:%CONTACT_EMAIL%">%CONTACT_EMAIL%</a>
       </div>
     </div>
   </section>
