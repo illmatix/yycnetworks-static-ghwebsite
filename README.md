@@ -31,26 +31,27 @@ A modern, static marketing site for web & software consulting plus a fixed‑pri
 
 ## Environment variables
 
-This project supports CI injection of environment values into the built HTML when deploying to GitHub Pages.
+This project injects environment values into the built HTML both locally and in CI.
 
 Local (optional):
-- Copy .env.example to .env and set your values for reference (the site can run without injection):
+- Copy .env.example to .env and set your values:
   cp .env.example .env
-- .env is ignored by git.
+- When you run `npm run build`, tokens in HTML will be replaced from your `.env` if set.
+- `.env` is ignored by git.
 
 GitHub Pages CI injection:
 - Add these GitHub Actions Secrets in your repo (Settings → Secrets and variables → Actions → New repository secret):
   - SITE_URL — Public URL of the deployed site (e.g., https://<user>.github.io/<repo>/)
   - CONTACT_EMAIL — Email address to show on the contact page
   - FORMSPREE_ID — Your Formspree form ID (the part after /f/)
-- On each deployment, the workflow replaces the following tokens in HTML with your secret values:
+- On each deployment, the workflow runs the same injection script with the secrets and replaces the following tokens in HTML:
   - %SITE_URL% in public/index.html (og:url + JSON‑LD Organization.url)
   - %CONTACT_EMAIL% in public/contact.html (mailto link + visible text)
   - %FORMSPREE_ID% in public/contact.html (form action URL)
 
 Notes:
-- If a secret is not set, its token remains unchanged in the output (no failure).
-- Tokens are simple literal strings. If you add new pages/fields, use the same %VAR_NAME% pattern and we can extend the workflow to replace them.
+- If a variable/secret is not set, its token remains unchanged in the output (no failure).
+- Tokens are simple literal strings. If you add new pages/fields, use the same %VAR_NAME% pattern and we can extend the injection to replace them.
 
 ## Contact form (free)
 

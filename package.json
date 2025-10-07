@@ -5,9 +5,11 @@
   "description": "Static marketing site for web & software consulting and realty website offering, built with Tailwind CSS.",
   "scripts": {
     "dev": "tailwindcss -i ./src/styles.css -o ./public/assets/styles.css --watch",
-    "build": "tailwindcss -i ./src/styles.css -o ./public/assets/styles.css --minify"
+    "build": "tailwindcss -i ./src/styles.css -o ./public/assets/styles.css --minify && node ./scripts/inject-env.mjs",
+    "inject": "node ./scripts/inject-env.mjs"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.10"
+    "tailwindcss": "^3.4.10",
+    "dotenv": "^16.4.5"
   }
 }
