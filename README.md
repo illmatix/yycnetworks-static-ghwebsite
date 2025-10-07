@@ -105,7 +105,7 @@ Status and remaining info needed to tailor the site further:
 - [x] Set brand name to "YYC Networks" across the site.
 - [x] Implement textual logo (YYC badge + wordmark) in header and footer.
 - [x] Apply initial brand color palette (warm orange). Tweak anytime in tailwind.config.js.
-- [ ] Confirm preferred email for contact form and mailto link.
+- [x] Confirm preferred email for contact form and mailto link.
 - [ ] Confirm geographic market focus for the realty package.
 - [ ] Confirm preferred IDX provider(s) and CRM choice (e.g., HubSpot, Zoho, Follow Up Boss, etc.).
 - [ ] Confirm domain and hosting preference (GitHub Pages already configured; Netlify optional).
