@@ -69,8 +69,11 @@ All demo images are hot‑linked from Unsplash using their free CDN. Replace wit
 
 - Basic meta tags and social cards (Open Graph/Twitter) are added.
 - JSON‑LD schema:
-  - Organization on index.html
+  - Organization on index.html (includes sameAs → https://chadpayne.ca and founder Person → Chad Payne)
   - Service + Offers on realty.html
+- Identity/relationship signals:
+  - rel=me and rel=author tags pointing to https://chadpayne.ca on all pages
+  - Visible footer link to “Resume (Chad Payne)” across the site
 - For the realty product’s SEO needs, plan to use a third‑party SEO plugin that supports schema.org (specific choice depends on the stack used for the IDX integration).
 
 ## Hosting (free)
