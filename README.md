@@ -23,6 +23,8 @@ A modern, static marketing site for web & software consulting plus a fixed‑pri
   - services.html — Consulting, one‑off projects, support
   - realty.html — Realty website package (IDX + CRM) with pricing
   - contact.html — Contact form (Formspree placeholder)
+  - privacy.html — Privacy Policy (Canada/US)
+  - terms.html — Terms of Service
   - assets/styles.css — Built Tailwind CSS (generated)
 - src/styles.css — Tailwind source with @tailwind and component utilities
 - tailwind.config.js — Tailwind configuration (scans public/**/*.html)

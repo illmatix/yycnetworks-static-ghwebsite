@@ -37,6 +37,8 @@ jobs:
         run: |
           if [ -n "${SITE_URL}" ]; then sed -i "s|%SITE_URL%|${SITE_URL}|g" public/index.html; fi
           if [ -n "${CONTACT_EMAIL}" ]; then sed -i "s|%CONTACT_EMAIL%|${CONTACT_EMAIL}|g" public/contact.html; fi
+          if [ -n "${CONTACT_EMAIL}" ]; then sed -i "s|%CONTACT_EMAIL%|${CONTACT_EMAIL}|g" public/privacy.html; fi
+          if [ -n "${CONTACT_EMAIL}" ]; then sed -i "s|%CONTACT_EMAIL%|${CONTACT_EMAIL}|g" public/terms.html; fi
           if [ -n "${FORMSPREE_ID}" ]; then sed -i "s|%FORMSPREE_ID%|${FORMSPREE_ID}|g" public/contact.html; fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
