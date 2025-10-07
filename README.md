@@ -68,7 +68,7 @@ All demo images are hot‑linked from Unsplash using their free CDN. Replace wit
   - Push this repository to GitHub and ensure your default branch is `main` (or update the workflow if different).
   - In your repo: Settings → Pages → Build and deployment → Source: GitHub Actions.
   - The included workflow at `.github/workflows/deploy-pages.yml` will:
-    - Install dependencies and build Tailwind (`npm ci && npm run build`).
+    - Install dependencies and build Tailwind (`npm install && npm run build`).
     - Publish the `public/` directory to GitHub Pages automatically on every push to `main`.
   - URLs on GitHub project pages use `/REPO_NAME/` in the path, so all internal links in this repo are relative (no leading slash) to work on Pages and locally.
 - Netlify:
