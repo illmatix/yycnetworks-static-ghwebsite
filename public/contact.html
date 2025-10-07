@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — YYC Networks</title>
+  <meta name="description" content="Start a conversation about consulting, projects, support, or the realty website package." />
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <link rel="icon" href="https://fav.farm/✉️" />
+</head>
+<body class="bg-white text-slate-800">
+<header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
+  <div class="container mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <span class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-brand-600 text-white text-xs font-bold">YYC</span>
+      <span class="font-semibold">YYC Networks</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="services.html" class="hover:text-brand-700">Services</a>
+      <a href="realty.html" class="hover:text-brand-700">Realty Websites</a>
+      <a href="contact.html" class="hover:text-brand-700">Contact</a>
+      <a href="#form" class="btn">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="py-16">
+    <div class="container mx-auto max-w-3xl px-4">
+      <h1 class="text-4xl font-bold mb-4">Contact</h1>
+      <p class="text-slate-600 mb-8">Tell us about your goals. We’ll reply with next steps and a tailored quote.</p>
+
+      <form id="form" class="space-y-4 p-6 rounded-lg border border-slate-200" action="https://formspree.io/f/your_form_id" method="POST">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium mb-1" for="name">Name</label>
+            <input class="w-full rounded-md border-slate-300 focus:border-brand-500 focus:ring-brand-500" type="text" id="name" name="name" required />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1" for="email">Email</label>
+            <input class="w-full rounded-md border-slate-300 focus:border-brand-500 focus:ring-brand-500" type="email" id="email" name="email" required />
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1" for="type">I’m interested in</label>
+          <select class="w-full rounded-md border-slate-300 focus:border-brand-500 focus:ring-brand-500" id="type" name="type">
+            <option>Consulting</option>
+            <option>One‑off Project</option>
+            <option>Support for Existing Project</option>
+            <option>Realty Website Package</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1" for="message">Project details</label>
+          <textarea class="w-full rounded-md border-slate-300 focus:border-brand-500 focus:ring-brand-500" id="message" name="message" rows="6" required></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+          <p class="text-xs text-slate-500">By submitting, you agree to our processing of your information.</p>
+          <button class="btn" type="submit">Send</button>
+        </div>
+        <p id="status" class="hidden text-sm"></p>
+      </form>
+
+      <div class="mt-6 text-sm text-slate-600">
+        Prefer email? Reach us at: <a class="text-brand-700 font-medium" href="mailto:hello@example.com">hello@example.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-slate-200 py-12">
+  <div class="container mx-auto max-w-7xl px-4 grid md:grid-cols-3 gap-8 items-start">
+    <div>
+      <div class="flex items-center gap-3 mb-3"><span class="text-2xl">🧩</span><span class="font-semibold">YYC Networks</span></div>
+      <p class="text-sm text-slate-600">Modern web & software delivered with care.</p>
+    </div>
+    <div class="text-sm">
+      <div class="font-medium mb-2">Company</div>
+      <ul class="space-y-2">
+        <li><a href="services.html" class="hover:text-brand-700">Services</a></li>
+        <li><a href="realty.html" class="hover:text-brand-700">Realty Websites</a></li>
+        <li><a href="contact.html" class="hover:text-brand-700">Contact</a></li>
+      </ul>
+    </div>
+    <div class="text-sm">
+      <div class="font-medium mb-2">Legal</div>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-brand-700">Privacy</a></li>
+        <li><a href="#" class="hover:text-brand-700">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('form');
+  const status = document.getElementById('status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.className = 'text-sm text-slate-600';
+    status.textContent = 'Sending…';
+
+    try {
+      const fd = new FormData(form);
+      const resp = await fetch(form.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
+      if (resp.ok) {
+        status.className = 'text-sm text-green-700';
+        status.textContent = 'Thanks! We\'ll be in touch shortly.';
+        form.reset();
+      } else {
+        status.className = 'text-sm text-red-700';
+        status.textContent = 'Something went wrong. Please email us directly.';
+      }
+    } catch (err) {
+      status.className = 'text-sm text-red-700';
+      status.textContent = 'Network error. Please try again later.';
+    }
+  });
+</script>
+</body>
+</html>

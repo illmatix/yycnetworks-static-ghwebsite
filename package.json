@@ -1,0 +1,13 @@
+{
+  "name": "yycnetworks-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static marketing site for web & software consulting and realty website offering, built with Tailwind CSS.",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/styles.css -o ./public/assets/styles.css --watch",
+    "build": "tailwindcss -i ./src/styles.css -o ./public/assets/styles.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}
