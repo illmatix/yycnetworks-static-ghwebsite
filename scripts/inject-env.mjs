@@ -17,6 +17,8 @@ const root = path.resolve(__dirname, '..');
 const files = [
   path.join(root, 'public', 'index.html'),
   path.join(root, 'public', 'contact.html'),
+  path.join(root, 'public', 'realty.html'),
+  path.join(root, 'public', 'services.html'),
   path.join(root, 'public', 'privacy.html'),
   path.join(root, 'public', 'terms.html')
 ];
